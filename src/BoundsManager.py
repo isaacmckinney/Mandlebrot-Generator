@@ -7,26 +7,8 @@ class GraphBorder:
     
     def zoom(self, sector):
 
-        convertedSector = None
+        convertedSector = sector
 
-        if sector == 1:
-            convertedSector = 9
-        if sector == 2:
-            convertedSector = 6
-        if sector == 3:
-            convertedSector = 3
-        if sector == 4:
-            convertedSector = 8
-        if sector == 5:
-            convertedSector = 5
-        if sector == 6:
-            convertedSector = 2
-        if sector == 7:
-            convertedSector = 7
-        if sector == 8:
-            convertedSector = 4
-        if sector == 9:
-            convertedSector = 1
 
         changes = self.border.copy()
         if convertedSector in [9, 6, 3]:
