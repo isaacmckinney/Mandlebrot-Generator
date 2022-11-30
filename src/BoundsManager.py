@@ -5,6 +5,9 @@ class GraphBorder:
         self.border = [x1, x2, y1, y2]
         self.lineage = []
     
+    def setBorder(self, newBorder):
+        self.border = newBorder
+
     def zoom(self, sector):
 
         convertedSector = sector
@@ -34,6 +37,7 @@ class GraphBorder:
 
         self.lineage.append(self.border.copy())
         self.border = changes
+        return self.border
     
     def undoZoom(self):
         if len(self.lineage) != 0:
