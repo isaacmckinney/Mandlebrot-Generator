@@ -7,3 +7,6 @@ class GraphConfig:
         self.resolution = resolution
         self.x = self.resolution[0]
         self.y = self.resolution[1]
+    
+    def setBounds(self, newBounds):
+        self.bounds.setBorder(newBounds)
