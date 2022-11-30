@@ -7,6 +7,8 @@ class StabilityStyle:
         self.style = None
         self.depth = depth
     
+    ## input: [c0, c1, c2, ...]
+    ## output: [c0, c1, c2, c0, c1, c2]
     def generateRepeatedPattern(self, pattern, steps):
         newStyle = []
 
@@ -22,6 +24,8 @@ class StabilityStyle:
         self.style = newStyle
         return newStyle
 
+    ## input: c0, c1, c2, c3, ....
+    ## output: {c0 -interp-> c1, c1 -interp-> c2, ...}
     def generateInterpolationSequence(self, colors, steps):
 
         newStyle = [None]*(self.depth + 1)
@@ -71,7 +75,7 @@ class StabilityStyle:
         while i <= self.depth :
             for c in range(len(fullColorList)):
                 if i <= self.depth:
-                    print("Setting index: " + str(i))
+                    #print("Setting index: " + str(i))
                     newStyle[i] = fullColorList[c]
                     i = i + 1
                 
@@ -87,7 +91,8 @@ class StabilityStyle:
 
 
 
-
+    ## input: c0, c1
+    ## output: { c0 -interp-> c1, c0 -interp-> c1, c0 -interp-> c1, ... }
     def generateRepeatedInterpolation(self, color1, color2, steps):
 
         r1 = color1[0]
@@ -135,7 +140,8 @@ class StabilityStyle:
         
 
 
-
+    ## input: c0, c1
+    ## output: full object interp from c0 to c1
     def generateInterpolatedStyle(self, color1, color2, steps):
 
         r1 = color1[0]

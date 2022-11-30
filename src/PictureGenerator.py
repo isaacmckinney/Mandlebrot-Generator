@@ -83,3 +83,7 @@ class PictureGenerator:
             self.image.save(nameOfFile + '.png')
 
         return self.image
+    
+    def setScores(self, newScores):
+        self.stability = newScores
+        return self.stability
